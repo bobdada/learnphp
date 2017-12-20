@@ -9,7 +9,7 @@
 * the page variable has been passed, enabling you to
 * ward off very basic mischief using htmlentities()
 */
-if(isset($_GET['page'])) {
+if(isset($_POST['page'])) {
 $page = htmlentities($_GET['page']);
 } else {
 $page = NULL;
