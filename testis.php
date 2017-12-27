@@ -1,12 +1,11 @@
 <?php
-<<<<<<< HEAD
+
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
 
 $link= new mysqli('locahost','root','','test');
 if(!$link){
   die('connection failed.' . $mysqli->error());
-=======
 /*
 * Very basic security measure to ensure that
 * the page variable has been passed, enabling you to
@@ -16,7 +15,7 @@ if(isset($_POST['page'])) {
 $page = htmlentities($_GET['page']);
 } else {
 $page = NULL;
->>>>>>> 4a048f5fba8af99dadccaef684bb530a1179bf13
+
 }
 
 $sql="SELECT album_name FROM album WHERE dai_id=?";
