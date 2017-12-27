@@ -9,7 +9,7 @@
 <?php
 //error_reporting(E_ALL);
 
-if(isset($_GET['pge'])){
+if(isset($_POST['pge'])){
   $pge=htmlentities($_GET['pge']);
 }
 
