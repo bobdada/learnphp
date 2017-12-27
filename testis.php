@@ -3,7 +3,7 @@
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
 
-$link= new mysqli('locahost','root','','test');
+$link= new mysqli('locahost','root','praveen','test');
 if(!$link){
   die('connection failed.' . $mysqli->error());
 /*
@@ -43,4 +43,4 @@ else {
 </form>
 
 
-<?php } ?>
+<?php } ?> 
