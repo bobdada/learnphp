@@ -1,9 +1,11 @@
-<ul id="menu">
-<li> <a href="testis.php">Home</a> </li>
-<li> <a href="testis.php?page=about">About Us</a> </li>
-<li> <a href="testis.php?page=contact">Contact Us</a> </li>
-</ul>
 <?php
+
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+
+$link= new mysqli('locahost','root','praveen','test');
+if(!$link){
+  die('connection failed.' . $mysqli->error());
 /*
 * Very basic security measure to ensure that
 * the page variable has been passed, enabling you to
@@ -13,32 +15,32 @@ if(isset($_POST['page'])) {
 $page = htmlentities($_GET['page']);
 } else {
 $page = NULL;
+
 }
-switch($page) {
-case 'about':
-echo "
-<h1> About Us </h1>
-<p> We are rockin' web developers! </p>";
-break;
-case 'contact':
-echo "
-<h1> Contact Us </h1>
-<p> Email us at
-<a href=\"mailto:info@example.com\">
-info@example.com
-</a>
-</p>";
-break;
-/*
-* Create a default page in case no variable is passed
-*/
-default:
-echo "
-<h1> Select a Page! </h1>
-<p>
-Choose a page from above
-to learn more about us!
-</p>";
-break;
+
+$sql="SELECT album_name FROM album WHERE dai_id=?";
+if($smt=$link->prepare($sql))
+{
+  $smt->bind_param('i',$_POST['daiharu']);
+  $smt->execute();
+  $smt->bind_result($album);
+  while ($smt->fetch()) {
+    printf("Album: %s  <br/>",$album);
+  }
+  $smt->close();
 }
-?>
+else {
+ ?>
+<form method="post">
+  <label for="artist">Select an Artist:</label>
+  <select name="artist">
+    <option value="1">Bon Iver</option>
+    <option value="2">Feist</option>
+
+
+  </select>
+<input type="submit">
+</form>
+
+
+<?php } ?> 
