@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Form</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="form.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -16,7 +16,7 @@
   </div>
   <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
-          <form id="contact-form" class="form" action="#" method="POST" role="form">
+          <form id="contact-form" class="form" action="db.php" method="POST" role="form">
               <div class="form-group">
                   <label class="form-label" for="name">Your Name</label>
                   <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1">
@@ -24,17 +24,9 @@
               <div class="form-group">
                   <label class="form-label" for="email">Your Email</label>
                   <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2">
-              </div>                            
-              <div class="form-group">
-                  <label class="form-label" for="subject">Subject</label>
-                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
-              </div>                            
-              <div class="form-group">
-                  <label class="form-label" for="message">Message</label>
-                  <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Message..." tabindex="4"></textarea>                                 
-              </div>
+              </div>                                                             
               <div class="text-center">
-                  <button type="submit" class="btn btn-start-order">Send Message</button>
+                  <button type="submit" class="btn btn-start-order">SUBMIT</button>
               </div>
           </form>
       </div>
